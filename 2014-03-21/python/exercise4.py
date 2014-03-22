@@ -65,8 +65,8 @@ columns_est =  R([1,2])(PI/2)(T([1,2,3])([0.75,-6.25,0.5])(((STRUCT(NN(13)(colum
 columns_ovest = R([1,2])(PI/2)(T([1,2,3])([0.75,-0.75,0.5])(((STRUCT(NN(13)(column))))))
 columns = COLOR(colorColumns)(STRUCT([columns_sud,columns_nord,columns_est,columns_ovest]))
 #triangular front element
-rect = T([1,2,3])([0.7,0.6,6.5])(CUBOID([5.6,0.3,1]))
-pt = MK([3.15,0.45,9])
+rect = T([1,2,3])([0.7,0.6,6.5])(CUBOID([5.6,0.3,0.5]))
+pt = MK([3.35,0.45,8.5])
 front = COLOR(colorCubi)(JOIN([rect,pt]))
 #triangular back element
 rect_back = T(2)(12.5)(rect)
@@ -93,6 +93,18 @@ centralFront = JOIN([rectC,ptC])
 rect_nord = T([2,3])([9.5,-0.5])(rectC)
 #final central structure
 central = COLOR(brown)(STRUCT([a,b,c,d,column_sud_central,column_nord_central,rect_est,rect_ovest,centralFront,rect_up_est,rect_up_ovest,rect_nord]))
+
+#decorations
+decor = [T(1)(0.55), CUBOID([0.2,-0.3,0.45])]
+decoration_s = T([1,2,3])([0.1,0.7,6.5])((STRUCT(NN(11)(decor))))
+plane = T([1,2,3])([0.6,0.4,7])(CUBOID([5.8,0.6,0.1]))
+decoration_sud = STRUCT([decoration_s,plane])
+decoration_nord = T([1,2])([7,14])(R([1,2])(PI)(decoration_sud))
+decoration = STRUCT([decoration_sud,decoration_nord])
+plane2 = R([1,3])(PI/6)(T([1,2,3])([4.1,0.2,5.7])(CUBOID([3.1,0.6,0.1])))
+plane3 = R([1,3])(-PI/6.2)(T([1,2,3])([-1.2,0.2,9.1])(CUBOID([3.1,0.6,0.1])))
+decorations = STRUCT([decoration,plane2,plane3])
+
 #vertical structure
 vertical_mock_up_3D = STRUCT([columns,front,central,back])
 
@@ -122,6 +134,6 @@ spiralStair = COLOR(colorSpiralStair)(T([1,2,3])([3.5,6.5,0.5])(MAP(BEZIER(S3)([
 colorInventedFloor = colorRGB([89,142,85])
 inventedFloor = COLOR(colorInventedFloor)(T([1,2,3])([2,4.5,4])(CUBOID([3,2,0.3])))
 #final 3D model
-solid_model_3D = STRUCT([two_and_half_model,vertical_mock_up_3D,spiralStair,inventedFloor,stairs])
+solid_model_3D = STRUCT([two_and_half_model,vertical_mock_up_3D,spiralStair,inventedFloor,stairs,decorations])
 
 VIEW(solid_model_3D)
