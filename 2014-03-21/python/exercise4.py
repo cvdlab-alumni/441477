@@ -22,6 +22,12 @@ from pyplasm import MK
 from pyplasm import JOIN
 from pyplasm import Q
 from pyplasm import QUOTE
+from pyplasm import MAP
+from pyplasm import COS
+from pyplasm import SIN
+from pyplasm import BEZIER
+from pyplasm import INTERVALS
+from pyplasm import S3
 
 
 #function to define color
@@ -89,14 +95,33 @@ rect_nord = T([2,3])([9.5,-0.5])(rectC)
 central = COLOR(brown)(STRUCT([a,b,c,d,column_sud_central,column_nord_central,rect_est,rect_ovest,centralFront,rect_up_est,rect_up_ovest,rect_nord]))
 #vertical structure
 vertical_mock_up_3D = STRUCT([columns,front,central,back])
-#final 3D model
-solid_model_3D = STRUCT([two_and_half_model,vertical_mock_up_3D])
+
 
 """exercise 4"""
 #stairs
 colorStair = colorRGB([152,118,84])
-stair1=T([1,2,3])([-1,-1,-0.5])(CUBOID([9,16,0.5]))
-stair2=T([1,2,3])([-2,-2,-1])(CUBOID([11,18,0.5]))
-stair3=T([1,2,3])([-3,-3,-1.5])(CUBOID([13,20,0.5]))
+stair1=T([1,2,3])([-0.5,-0.5,-0.5])(CUBOID([8,15,0.5]))
+stair2=T([1,2,3])([-1,-1,-1])(CUBOID([9,16,0.5]))
+stair3=T([1,2,3])([-1.5,-1.5,-1.5])(CUBOID([10,17,0.5]))
 stairs=COLOR(colorStair)(STRUCT([stair1,stair2,stair3]))
-VIEW(STRUCT([stairs,solid_model_3D]))
+#spiral stair.
+#The spiral stair is not part of the real temple, but it is a touch of imagination
+#to satisfy the requirements of the exercise-part 4.
+dom1D = INTERVALS(1)(1)
+dom3D = INSR(PROD)([INTERVALS(7*PI)(240), dom1D, dom1D])
+def spiral1(p):
+    alpha,r,h = p
+    return [r*COS(alpha), r*SIN(alpha), alpha/(2*PI)]
+def spiral2(p):
+    alpha,r,h = p
+    return [r*COS(alpha), r*SIN(alpha), alpha/(2*PI) + 0.1]
+obj = STRUCT([MAP(spiral1)(dom3D), MAP(spiral2)(dom3D)])
+colorSpiralStair = colorRGB([154,223,149])
+spiralStair = COLOR(colorSpiralStair)(T([1,2,3])([3.5,6.5,0.5])(MAP(BEZIER(S3)([spiral1,spiral2]))(dom3D)))
+#invented floor to make sense of the spiral Stair
+colorInventedFloor = colorRGB([89,142,85])
+inventedFloor = COLOR(colorInventedFloor)(T([1,2,3])([2,4.5,4])(CUBOID([3,2,0.3])))
+#final 3D model
+solid_model_3D = STRUCT([two_and_half_model,vertical_mock_up_3D,spiralStair,inventedFloor,stairs])
+
+VIEW(solid_model_3D)
