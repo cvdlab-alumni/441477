@@ -4,7 +4,23 @@ Created on Fri Mar 21 19:35:42 2014
 
 @author: chiara
 """
-from pyplasm import *
+from pyplasm import CUBOID
+from pyplasm import VIEW
+from pyplasm import R
+from pyplasm import T
+from pyplasm import COLOR
+from pyplasm import STRUCT
+from pyplasm import NN
+from pyplasm import DIFF
+from pyplasm import PROD
+from pyplasm import INSR
+from pyplasm import CYLINDER
+from pyplasm import Color4f
+from pyplasm import PI
+from pyplasm import MK
+from pyplasm import JOIN
+from pyplasm import Q
+from pyplasm import QUOTE
 
 #function to define color
 
@@ -68,7 +84,7 @@ rect_up_est = T([1,2,3])([5,5,3.5])(CUBOID([0.3,4,2]))
 rect_up_ovest = T([1,2,3])([1.8,5,3.5])(CUBOID([0.3,4,2]))
 #triangular element of the central structure
 rectC = T([1,2,3])([1.8,2,5.5])(CUBOID([3.5,0.5,0.5]))
-ptC = MK([3.5,2.55,7])
+ptC = MK([3.5,2.3,7])
 centralFront = JOIN([rectC,ptC])
 
 rect_nord = T([2,3])([9.5,-0.5])(rectC)

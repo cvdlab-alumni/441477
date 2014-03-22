@@ -4,8 +4,22 @@ Created on Sat Mar 22 07:46:18 2014
 
 @author: chiara
 """
-
-from pyplasm import *
+from pyplasm import CUBOID
+from pyplasm import VIEW
+from pyplasm import R
+from pyplasm import T
+from pyplasm import COLOR
+from pyplasm import STRUCT
+from pyplasm import NN
+from pyplasm import DIFF
+from pyplasm import PROD
+from pyplasm import INSR
+from pyplasm import Color4f
+from pyplasm import PI
+from pyplasm import MK
+from pyplasm import JOIN
+from pyplasm import Q
+from pyplasm import QUOTE
 
 #function to define color
 def colorRGB(values):
@@ -64,10 +78,10 @@ rect_ovest = T([1,2,3])([1.8,5,0.5])(INSR(PROD)(([Q(0),QUOTE([-0.4,0.3]*5),Q(3)]
 rect_up_est = T([1,2,3])([5,5,3.5])(CUBOID([0,4,2]))
 rect_up_ovest = T([1,2,3])([1.8,5,3.5])(CUBOID([0,4,2]))
 #triangular element of the central structure
-rectC = T([1,2,3])([1.8,2,5.5])(CUBOID([3.3,0,0.5]))
+rectC = T([1,2,3])([1.8,2,5.5])(CUBOID([3.2,0,0.5]))
 ptC = MK([3.5,2,7])
 centralFront = JOIN([rectC,ptC])
-rect_nord = T([2,3])([9.5,-0.5])(rectC)
+rect_nord = T([2,3])([10,-0.5])(rectC)
 
 central = COLOR(brown)(STRUCT([a,b,c,d,column_sud_central,column_nord_central,rect_est,rect_ovest,centralFront,rect_up_est,rect_up_ovest,rect_nord]))
 vertical_mock_up_3D = STRUCT([columns,front,central])

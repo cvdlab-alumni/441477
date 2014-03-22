@@ -5,8 +5,17 @@ Created on Sat Mar 22 02:30:32 2014
 @author: chiara
 """
 
-from pyplasm import *
 
+from pyplasm import CUBOID
+from pyplasm import VIEW
+from pyplasm import R
+from pyplasm import T
+from pyplasm import COLOR
+from pyplasm import STRUCT
+from pyplasm import NN
+from pyplasm import DIFF
+from pyplasm import Color4f
+from pyplasm import PI
 #function to define color
 def colorRGB(values):
         return Color4f([ values[0]/255.0,
