@@ -5,7 +5,7 @@
 
    <body>
 	<div>
-		<p>Name of building: Tempio di Agrigento<p>
+		<p>Name of building: Tempio della Concordia (Agrigento)<p>
 		<p>Name: Chiara	<p>
 		<p>Surname: Bartalotta<p>
 		<p>University ID: 441477<p>
@@ -19,17 +19,22 @@
 	<div id = exercise>
 		<p>Exercises:<p>
   
-		<p><a href="/python/exercise1.py">Exercise 1</a> 
-		<a href="/immage/exercise1.png">Image exercise 1</a></p>
-		<p><a href="/python/exercise2.py">Exercise 2</a> 
-		<a href="/immage/exercise2.png">Image exercise 2</a>
-		<a href="/immage/exercise2-2.png">Image exercise 2</a></p>
-		<p><a href="/python/exercise2.py">Exercise 3</a> 
-		<a href="/immage/exercise3.png">Image exercise 3</a></p>
-		<p><a href="/python/exercise3.py">Exercise 4</a> 
-		<a href="/immage/exercise4.png">Image exercise 4</a></p>
-		<a href="/immage/exercise4-1.png">Image exercise 4</a></p>
-		<a href="/immage/exercise4-2.png">Image exercise 4</a></p>
+		<p><a href="/python/exercise1.py">Exercise 1:</a> 
+		<a href="/immage/exercise1.png">Image</a></p>
+		<p><a href="/python/exercise2.py">Exercise 2:</a> 
+		<a href="/immage/exercise2.png"> Image</a>
+		<a href="/immage/exercise2-2.png">Image</a></p>
+		<p><a href="/python/exercise2.py">Exercise 3:</a> 
+		<a href="/immage/exercise3-2.png"> Image</a>
+		<a href="/immage/exercise3.png">Image</a>
+		<a href="/immage/exercise3-1.png">Image</a></p>
+		<p><a href="/python/exercise3.py">Exercise 4:</a> 
+		<a href="/immage/exercise4-1.png"> Image</a>
+		<a href="/immage/exercise4-2.png">Image</a>
+		<a href="/immage/exercise4.png">Image</a></p>
+	</div>
+	<div id = description>
+		The project aims at reproducing the nowadays state of the Temple of Concordia (Agrigento, Italy). 			In the exercise 4, the spiral stair is not part of the real temple, but it is a touch of imagination to satisfy the 			requirements of the exercise.
 	</div>
    </body>
 </html>
