@@ -8,14 +8,13 @@ Created on Sat Mar 22 02:30:32 2014
 from pyplasm import *
 
 #function to define color
-
 def colorRGB(values):
         return Color4f([ values[0]/255.0,
                          values[1]/255.0,
                          values[2]/255.0,
                          1.0])
                 
-green = colorRGB([60,179,113])
+
 colorFloor2 = colorRGB([204,153,102])
 colorCubi = colorRGB([204,119,34])
 
