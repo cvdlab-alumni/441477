@@ -73,6 +73,6 @@ rect_nord = T([2,3])([9.5,-0.5])(rectC)
 #final central structure
 central = COLOR(brown)(STRUCT([a,b,c,d,column_sud_central,column_nord_central,rect_est,rect_ovest,centralFront,rect_up_est,rect_up_ovest,rect_nord]))
 
-solid_model_3D = STRUCT([floor0,central,stairs])
+solid_horizontal_model_3D = STRUCT([floor0,central,stairs])
 
-VIEW(solid_model_3D)
+VIEW(solid_horizontal_model_3D)

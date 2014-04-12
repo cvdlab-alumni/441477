@@ -31,7 +31,6 @@ from pyplasm import INTERVALS
 from pyplasm import S3
 
 
-
 #function to define color
 def colorRGB(values):
         return Color4f([ values[0]/255.0,
@@ -58,7 +57,7 @@ element2 = T([1,2,3])([0.5,0.5,6])(CUBOID([6,13,0.5]))
 floor2 = COLOR(colorFloor2)(DIFF([element2,element1]))
 floor2 = COLOR(colorFloor2)(DIFF([element2,element1]))
 #horizontal elements
-two_and_half_model=STRUCT([floor1,floor2])
+cornice=STRUCT([floor1,floor2])
 #columns
 colorColumns = colorRGB([255,204,153])
 column = [T(1)(0.9),CYLINDER([0.25,5.3])(10)]
@@ -87,6 +86,7 @@ plane3 = R([1,3])(-PI/6.2)(T([1,2,3])([-1.2,0.2,9.1])(CUBOID([3.1,0.6,0.1])))
 decorations = STRUCT([decoration,plane2,plane3])
 #vertical structure
 vertical_mock_up_3D = STRUCT([columns,front,back,decorations])
-solid_model_3D = STRUCT([two_and_half_model,vertical_mock_up_3D])
+solid_vertical_model_3D = STRUCT([cornice,vertical_mock_up_3D])
 
-VIEW(solid_model_3D)
+VIEW(solid_vertical_model_3D)
+
