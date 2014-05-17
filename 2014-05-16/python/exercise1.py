@@ -88,5 +88,5 @@ appartamento = appartamento[0], [cell for k,cell in enumerate(appartamento[1]) i
 hpc = SKEL_1(STRUCT(MKPOLS(appartamento)))
 hpc = cellNumbering (appartamento,hpc)(range(len(appartamento[1])),CYAN,2)
 #VIEW(hpc)
-#DRAW(appartamento)
+DRAW(appartamento)
 

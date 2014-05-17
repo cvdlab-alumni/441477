@@ -1,0 +1,42 @@
+<html>
+  <head>
+<title>Homework 2014-05-16</title>
+  </head>
+
+   <body>
+	<div>
+		<p>Name: Chiara	<p>
+		<p>Surname: Bartalotta<p>
+		<p>University ID: 441477<p>
+		<p>Links:</p>
+  	</div>
+	<div id = exercise>
+		<p>Exercises:<p>
+  
+		<p><a href="/python/exercise1.py">Exercise 1:</a> 
+		<a href="/immages/exercise1.png">Image</a>
+		<a href="/immages/exercise1-2.png">Image</a>
+		<a href="/immages/exercise1-3.png">Image</a></p>		
+			
+		<p><a href="/python/exercise2.py">Exercise 2:</a> 
+		<a href="/immages/exercise2.png"> Image</a>
+		<a href="/immages/exercise2-2.png"> Image</a>
+
+		<p><a href="/python/exercise3.py">Exercise 3</a>
+
+		<p><a href="/python/exercise4.py">Exercise 4</a> 
+	</div>
+	<div id = description>
+		<p>
+		Per svolgere gli esercizi e' stata utilizzata principalmente la libreria sysml.py. Gli elementi dell'appartamento(stanze, corridoi e pareti) sono stati realizzati mediante diagrammi composti da vertici e celle secondo il modello assemplyDiagramInit di sysml. </p>
+		<p>ESERCIZIO 1 : e' stato costruito un appartamento a partire da un assemblyDiagramInit([5,7,2]). Le stanze sono state definite rimuovendo le celle che le componevano. Le porte sono state realizzate mappando un diagramma di una parete con porta, all'interno della cella corrispondente al muro nel quale si e' voluta realizzare la porta. Lo stesso e' stato fatto per realizzare le finestre ed il balcone.</p>
+
+		<p>ESERCIZIO2 : per realizzare il condominio e' stato creato un nuovo diagramma, nelle cui celle di interesse e' stato mappato l'appartamento costruito nell'esercizio 1. In particolare il condominio e' composto da quattro piani, ognuno dei quali ha quattro appartamenti ed un corridoio/pianerottolo che affaccia sulle scale a chiocciola. Per realizzare gli elementi curvi, si e' fatto uso di curve di Bezier mediante le quali sono state realizzate due automobili (una rossa ed una blu) in stile Blocklandia.</p>
+		<p>ESERCIZIO3: sono state create delle funzioni utili in particolare:</p>
+			<ul>
+				<li>una funzione per inserire, in un unico passaggio, piu' diagrammi in piu' celle del master. A tale scopo, per arginare il problema dell'eliminazione di una cella, si suggerisce di inserire, come input, diagrammi a cui e' gia' stata sottratta la cella che non si vuole nel master.</li>
+				<li>funzioni che automatizzano il loop "merging-numbering-elimination" per la creazione di porte e finestre.</li>
+	</ul>
+	</div>
+   </body>
+</html>
