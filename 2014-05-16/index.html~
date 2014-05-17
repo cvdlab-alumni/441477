@@ -34,7 +34,7 @@
 		<p>ESERCIZIO2 : per realizzare il condominio e' stato creato un nuovo diagramma, nelle cui celle di interesse e' stato mappato l'appartamento costruito nell'esercizio 1. In particolare il condominio e' composto da quattro piani, ognuno dei quali ha quattro appartamenti ed un corridoio/pianerottolo che affaccia sulle scale a chiocciola. Per realizzare gli elementi curvi, si e' fatto uso di curve di Bezier mediante le quali sono state realizzate due automobili (una rossa ed una blu) in stile Blocklandia.</p>
 		<p>ESERCIZIO3: sono state create delle funzioni utili in particolare:</p>
 			<ul>
-				<li>una funzione per inserire, in un unico passaggio, piu' diagrammi in piu' celle del master. A tale scopo, per arginare il problema dell'eliminazione di una cella, si suggerisce di inserire, come input, diagrammi a cui è gia' stata sottratta la cella che non si vuole nel master.</li>
+				<li>una funzione per inserire, in un unico passaggio, piu' diagrammi in piu' celle del master. A tale scopo, per arginare il problema dell'eliminazione di una cella, si suggerisce di inserire, come input, diagrammi a cui e' gia' stata sottratta la cella che non si vuole nel master.</li>
 				<li>funzioni che automatizzano il loop "merging-numbering-elimination" per la creazione di porte e finestre.</li>
 	</ul>
 	</div>
