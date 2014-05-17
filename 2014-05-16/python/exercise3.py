@@ -22,8 +22,8 @@ def view_numbered_cells(diagram):
 	return VIEW(hpc)
 
 """merge multiple diagrams in different cells of master.
-   To arginate the problem of cells elimination, insert in input diagram whitout cell to eliminate
-   e.g. diagram = wall schema whitout the cell corresponding to the door"""
+   To arginate the problem of cells elimination, insert in input diagram without cell to eliminate
+   e.g. diagram = wall schema without the cell corresponding to the door"""
 
 def multiple_diagrams2cells(diagrams,master,toMerge):
 	V,CV = master
@@ -37,8 +37,22 @@ def remove_cells(master,toRemove):
 	return master[0],[cell for k,cell in enumerate(master[1]) if not (k in toRemove)]
 
 
+
+""" Function that merge an array of diagrams and remove the corresponding cell """
+def merge_remove_diagrams2cells(diagrams,master,toRemove,toMerge) :
+	for i in range(len(diagrams)) :
+		V,CV = master
+		maxLen = len(CV)-1 
+		master = diagram2cell(diagrams[i],master,toMerge[i])
+		V,CV = master 
+		for j in range(len(toRemove[i])) :
+			toRemove[i][j] += maxLen 
+		master = V,[cell for k,cell in enumerate(CV) if not (k in toRemove[i])]
+	return master 
+
 """
 Functions that automatize the loop "merging-numbering-elimination" creating doors and windows:
+
 
 
 Functions for the creation of doors in the walls.
@@ -125,3 +139,27 @@ DRAW(appartamentoW)
 """test windows2x_walls"""
 appartamentoW = windows2y_walls(0.8,0.8,appartamentoW,[6,10])
 DRAW(appartamentoW)
+
+"""test04 with merge_remove_diagrams2cells"""
+
+master = assemblyDiagramInit([5,5,2])([[.3,3.2,.1,5,.3],[.3,4,.1,2.9,.3],[.3,2.7]])
+V,CV = master
+toRemove = [13,33,17,37]
+master = V,[cell for k,cell in enumerate(CV) if not (k in toRemove)]  
+
+hpc = SKEL_1(STRUCT(MKPOLS(master)))
+hpc = cellNumbering (master,hpc)(range(len(master[1])),CYAN,2)
+VIEW(hpc)
+
+toRemove = [[2],[4,10]]
+toMerge = [29,34]
+diagram1 = assemblyDiagramInit([3,1,2])([[2,1,2],[.3],[2.2,.5]])
+diagram2 = assemblyDiagramInit([5,1,3])([[1.5,0.9,.2,.9,1.5],[.3],[1,1.4,.3]])
+diagrams = [diagram1,diagram2]
+
+master = merge_remove_diagrams2cells(diagrams,master,toRemove,toMerge)
+
+hpc = SKEL_1(STRUCT(MKPOLS(master)))
+hpc = cellNumbering (master,hpc)(range(len(master[1])),CYAN,2)
+VIEW(hpc) 
+DRAW(master)
